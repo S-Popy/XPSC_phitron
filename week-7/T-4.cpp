@@ -13,17 +13,23 @@ signed main() {
         ll a, b; cin >> a >> b;
 
         ll GCD = __gcd(a, b);
+        bool flag = true;
 
-        while(b > 1 && GCD > 1) {
+        while(b != 1) {
+
+            if(GCD == 1) {
+                flag = false;
+                break;
+            }
             b /= GCD;
-            GCD = __gcd(a, b);
+            GCD = __gcd(GCD, b);
         }
 
-        if (b != 1) {
-            cout << "NO\n";
+        if (flag) {
+            cout << "Yes\n";
         }
         else {
-            cout << "YES\n";
+            cout << "No\n";
         }
     }
     return 0;
