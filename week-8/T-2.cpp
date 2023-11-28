@@ -6,7 +6,7 @@ const int MAX = 1e9+7;
 
 void build (int node, int l, int r, int a[]) {
     if(l == r) {
-        tree[node] = a[r];
+        tree[node] = a[l];
         return;
     }
 
